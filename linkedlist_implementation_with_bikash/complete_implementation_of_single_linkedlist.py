@@ -75,19 +75,38 @@ class linkedlist:
                 current = current.next
             temp.next = newnode
 
+    ## delete node from linked list
+    def delete_node_from_linkedlist(self, node):
+        if self.head is None:
+            print("linked list is empty \n")
+            return
+        current = self.head
+        prev_node = None
+        while(current):
+            if current.data == node:
+                break
+            prev_node = current
+            current = current.next
+        if prev_node is None:
+            self.head = current.next
+        else:
+            prev_node.next = current.next
 
-llist = linkedlist()
 
-llist.create_linkedlist(2)
+Bikash_list = linkedlist()
 
-llist.add_node_after_specfic_node(3, 5)
+Bikash_list.create_linkedlist(2)
 
-llist.push_at_beginning(5)
+Bikash_list.add_node_after_specfic_node(3, 5)
 
-llist.print_list()
+Bikash_list.push_at_beginning(5)
 
-llist.reverse()
+Bikash_list.print_list()
 
-llist.insert_node_at_end(8)
+Bikash_list.reverse_linkedlist()
 
-llist.print_list()
+Bikash_list.insert_node_at_end(8)
+
+Bikash_list.delete_node_from_linkedlist(8)
+
+Bikash_list.print_list()
